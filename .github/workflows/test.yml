@@ -12,10 +12,11 @@ jobs:
             - name: 檢查node.js 版本
               run: node -v
     task_2:
+        needs: task_1
         runs-on: ubuntu-latest
         steps:
             - name: 下載repo
-              run: actions/checkout@v4
+              uses: actions/checkout@v4
 
             - name: 顯示所有檔案
               run: ls -R
